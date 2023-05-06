@@ -1,3 +1,4 @@
+##replace the full path of your reference sequence
 ref = "/data/zhangshuhong/HYB/2023/April/test/reference/L.gasseri.GCF_902386655.1.fna"
 rule all:
     input:
