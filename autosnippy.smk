@@ -1,11 +1,12 @@
-##replace the full path of your reference sequence
-ref = "/data/zhangshuhong/HYB/2023/April/test/reference/L.gasseri.GCF_902386655.1.fna"
+##replace the full path of your reference sequence，only test for fasta/fna.
+ref = "/data/HYB/2023/April/test/reference/L.gasseri.GCF_902386655.1.fna"
 rule all:
     input:
         "core.full.aln",
         "clean.core.aln",
         "clean.core.tree.newick"
-
+        
+##make the .sh file and peform cgSNP 
 rule snippymulti:
     input:
         "fasta.txt"    
@@ -18,7 +19,7 @@ rule snippymulti:
         snippy-multi fasta.txt --cpus 64 --reference {params.r} > run.sh
         sh ./run.sh
         """
-
+##cleaning
 rule cleaning:
     input:
         "core.full.aln"
@@ -30,7 +31,7 @@ rule cleaning:
         run_gubbins.py -p gubbins clean.full.aln
         snp-sites -c gubbins.filtered_polymorphic_sites.fasta > clean.core.aln
         """
-
+#bulid a tree 
 rule tree:
     input:
         "clean.core.aln"
