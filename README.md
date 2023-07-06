@@ -6,8 +6,9 @@ A snakemake script to run core snp phylogeny to a batch of fasta files using sni
 
 2.fasta.txt:a file containing the samples and their full path.
 
-### analyse
+### Analyse
 Just type
+
 `
 snakemake -s autosnippy.smk -c 16
 `
