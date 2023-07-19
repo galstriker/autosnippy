@@ -6,7 +6,14 @@ A snakemake script to run core snp phylogeny to a batch of fasta files using sni
 
 Change the full path of your reference genome in **autosnippy.smk** file
 
-2.fasta.txt:a file containing the samples and their full path.
+2.fasta.txt:a file containing the samples and their full path.Such as:
+
+```
+a the/full/path/of/a.fasta
+b the/full/path/of/b.fasta
+```
+
+3.Change the number after "--cpus" to the suitable number of your computer or server.
 
 ### Analyse
 Just type
