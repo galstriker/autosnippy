@@ -6,7 +6,7 @@ rule all:
         "clean.core.aln",
         "clean.core.tree.newick"
         
-##make the .sh file and peform cgSNP 
+##make the .sh file and peform cgSNP."--cpus" is up to you and change it to the suitable number.
 rule snippymulti:
     input:
         "fasta.txt"    
