@@ -1,5 +1,5 @@
 # autosnippy
-A snakemake script to run core snp phylogeny to a batch of fasta files using snippy.
+A snakemake script to run core snp phylogeny to a batch of fasta files using Snippy.
 ## Usage
 ### Preparation
 1.Reference genome:fasta format was only tested right now. 
@@ -21,6 +21,11 @@ Just type
 `
 snakemake -s autosnippy.smk -c 16
 `
+
 and wait. 
+
 All will be done.
+## Reference
+1.[Snippy](https://github.com/tseemann/snippy) The main software of this small script, if you use this script for your work, please cite Snippy in your paper or study.
+
 
