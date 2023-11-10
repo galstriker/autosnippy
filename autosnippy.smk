@@ -19,7 +19,7 @@ rule snippymulti:
         snippy-multi fasta.txt --cpus 64 --reference {params.r} > run.sh
         sh ./run.sh
         """
-##cleaning
+## cleaning and recombination removal
 rule cleaning:
     input:
         "core.full.aln"
@@ -31,7 +31,7 @@ rule cleaning:
         run_gubbins.py -p gubbins clean.full.aln
         snp-sites -c gubbins.filtered_polymorphic_sites.fasta > clean.core.aln
         """
-#bulid a tree 
+#bulid a tree based on clean.core.aln
 rule tree:
     input:
         "clean.core.aln"
